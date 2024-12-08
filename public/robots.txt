@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+User-agent: Facebot
+Disallow: /
+
+User-agent: TikTokBot
+Disallow: /
+
+User-agent: Yandex
+Disallow: /
+
+User-agent: Twitterbot
+Disallow: /
+
+User-agent: OpenAI
+Disallow: /
+
+User-agent: Anthropic
+Disallow: /
+
+User-agent: GoogleAI
+Disallow: /

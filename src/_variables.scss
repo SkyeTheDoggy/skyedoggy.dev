@@ -1,0 +1,25 @@
+@use "sass:color";
+
+@function hue($color) {
+  @return color.channel($color, "hue", $space: hsl);
+}
+
+@function darken($color, $amount) {
+  @return color.scale($color, $lightness: -$amount);
+}
+
+@function lighten($color, $amount) {
+  @return color.scale($color, $lightness: $amount);
+}
+
+@function transparentize($color, $amount) {
+  @return color.scale($color, $alpha: -$amount);
+}
+
+@function saturate($color, $amount) {
+  @return color.adjust($color, $saturation: $amount);
+}
+
+$main-accent-color: hsl(259, 25%, 60%);
+$sec-accent-color: hsl(316, 44%, 64%);
+$main-bg-color: hsl(hue($main-accent-color), 15%, 20%);

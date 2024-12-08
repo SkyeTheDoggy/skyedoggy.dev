@@ -1,0 +1,62 @@
+@use "../variables" as *;
+
+.skeletonTextContainer {
+  padding-top: 2rem;
+  position: relative;
+  .fakeImg,
+  .skeletonLine {
+    background: linear-gradient(
+      90deg,
+      transparentize(
+        $color: lighten($color: $main-bg-color, $amount: 10%),
+        $amount: 20%
+      ),
+      lighten($color: $main-bg-color, $amount: 15%),
+      transparentize(
+        $color: lighten($color: $main-bg-color, $amount: 10%),
+        $amount: 20%
+      )
+    );
+    background-size: 200% 100%;
+    border-radius: 0.25em;
+    animation: skeleton-loading 2s infinite;
+  }
+
+  .imgWithText {
+    width: 100%;
+    display: inline-flex;
+    .lines {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .fakeImg {
+    margin-right: 0.5em;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+    aspect-ratio: 1;
+  }
+
+  .skeletonLine {
+    height: 1em;
+    margin-bottom: 0.5em;
+  }
+}
+
+@media (max-width: 800px) {
+  .fakeImg {
+    width: 130px !important;
+    height: 130px !important;
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

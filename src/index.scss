@@ -1,0 +1,184 @@
+@use "variables" as *;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  color-scheme: dark;
+  color: white;
+  font-size: 1.1rem;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  background: lighten($color: $main-bg-color, $amount: 15%);
+  border-radius: 100px;
+  background-clip: padding-box;
+
+  &:hover {
+    background: lighten($color: $main-bg-color, $amount: 25%);
+    background-clip: padding-box;
+    border: 3px solid transparent;
+  }
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background-color: $sec-accent-color;
+  color: initial;
+}
+
+::-moz-selection {
+  background-color: $sec-accent-color;
+  color: initial;
+}
+
+a {
+  $accent: lighten(
+    saturate(
+      $color: $main-accent-color,
+      $amount: 20%,
+    ),
+    20%
+  );
+  text-decoration: none;
+  color: $accent;
+  &:visited {
+    color: $accent;
+  }
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  align-self: center;
+  margin-right: 0.5em;
+
+  &.small {
+    width: 1.1em !important;
+    height: 1.1em !important;
+  }
+}
+
+.loadingSpinnerContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.errorContainer {
+  text-align: center;
+}
+
+.notFoundContainer,
+.WIPContainer {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .notFoundIcon,
+  .WIPIcon {
+    width: 100px;
+    height: 100px;
+    max-width: 100%;
+  }
+}
+
+.skip-to-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 0.8em;
+  padding: 0.25em 0.5em;
+  border-radius: 0.5em;
+  background: hsla(0, 0%, 0%, 0.8);
+  margin: 0.5rem;
+  color: white;
+  text-decoration: none;
+  z-index: 1000;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.65);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.65);
+
+  &:focus {
+    opacity: 1;
+    pointer-events: initial;
+    transform: translateY(0);
+    outline: none;
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: $main-accent-color;
+  }
+
+  &:visited {
+    color: white;
+  }
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, $main-accent-color 94%, #0000)
+      top/9px 9px no-repeat,
+    conic-gradient(#0000 30%, $main-accent-color);
+  mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+  animation: spinner-c7wet2 1s infinite linear;
+}
+
+@keyframes spinner-c7wet2 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
