@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import preact from '@preact/preset-vite'
 import fs from 'fs'
+import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -10,7 +11,7 @@ export default defineConfig({
     {
       name: 'copy-nojekyll',
       generateBundle() {
-        const nojekyllPath = resolve(__dirname, 'public/.nojekyll')
+        const nojekyllPath = path.resolve(__dirname, 'public/.nojekyll')
 
         if (fs.existsSync(nojekyllPath)) {
           const fileContents = fs.readFileSync(nojekyllPath, 'utf-8')
