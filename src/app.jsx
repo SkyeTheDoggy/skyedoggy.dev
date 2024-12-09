@@ -1,11 +1,12 @@
 import { Router, getCurrentUrl, Route } from 'preact-router';
+import { createHashHistory } from 'history';
 import { useEffect, useState } from 'preact/hooks';
 import AnimatedBG from './components/animated_bg.jsx';
 import paw from './assets/paw.svg';
 import './app.scss';
 
-import menuIcon from './assets/icons/menu.svg'
-import menuCloseIcon from './assets/icons/menu_close.svg'
+import menuIcon from './assets/icons/menu.svg';
+import menuCloseIcon from './assets/icons/menu_close.svg';
 
 import WIP from './pages/WIP.jsx';
 import Home from './pages/Home.jsx';
@@ -13,12 +14,12 @@ import Repos from './pages/Repos.jsx';
 import NotFound from './pages/NotFound.jsx';
 import Contact from './pages/Contact.jsx';
 
-const routeNames = [
-  { name: 'Home', route: '/' },
-  { name: 'GitHub Repos', route: '/repos' },
-  { name: 'Contact', route: '/contact' },
-  { name: 'My Artworks', route: '/artworks' },
-  { name: 'My Waifus', route: '/waifus' },
+const routes = [
+  { name: 'Home', path: '/', component: Home },
+  { name: 'GitHub Repos', path: '/repos', component: Repos },
+  { name: 'Contact', path: '/contact', component: Contact },
+  { name: 'My Artworks', path: '/artworks', component: WIP },
+  { name: 'My Waifus', path: '/waifus', component: WIP },
 ];
 
 export function App() {
@@ -27,17 +28,16 @@ export function App() {
   const [navStatus, setNavStatus] = useState(isMobile ? 'closed' : 'open');
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIsMobile(window.innerWidth <= 800);
-    }, 100);
-    return () => clearInterval(interval);
+    const updateMobileStatus = () => setIsMobile(window.innerWidth <= 800);
+    window.addEventListener('resize', updateMobileStatus);
+    return () => window.removeEventListener('resize', updateMobileStatus);
   }, []);
 
   const handleRoute = (e) => {
     setCurrentPath(e.url);
   };
 
-  const activeRoute = routeNames.find(route => route.route === currentPath);
+  const activeRoute = routes.find(route => route.path === currentPath);
   const routeName = activeRoute ? activeRoute.name : 'Not Found';
 
   return (
@@ -65,18 +65,18 @@ export function App() {
             </div>
           </div>
           <ul className="list">
-            {routeNames.map(route => (
+            {routes.map(({ name, path }) => (
               <a
-                key={route.route}
+                key={path}
                 tabIndex={1}
                 className="item"
-                href={route.route}
-                aria-selected={route.route === currentPath}
+                href={path}
+                aria-selected={path === currentPath}
                 onClick={() => {
                   if (isMobile) setNavStatus('closed');
                 }}
               >
-                {route.name}
+                {name}
               </a>
             ))}
           </ul>
@@ -94,12 +94,10 @@ export function App() {
             </span>
           </div>
           <div className="mainContent" id="main">
-            <Router onChange={handleRoute}>
-              <Route path="/" component={Home} />
-              <Route path="/repos" component={Repos} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/artworks" component={WIP} />
-              <Route path="/waifus" component={WIP} />
+            <Router history={createHashHistory()} onChange={handleRoute}>
+              {routes.map(({ path, component }) => (
+                <Route path={path} component={component} />
+              ))}
               <Route default component={NotFound} />
             </Router>
           </div>
