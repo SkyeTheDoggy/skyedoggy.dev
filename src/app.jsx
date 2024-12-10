@@ -44,7 +44,11 @@ export function App() {
 
   const handleRoute = (e) => {
     setCurrentPath(e.url);
-    plausible.trackPageview()
+    if (routes.some(p => p.path === e.url)) {
+      plausible.trackPageview()
+    } else {
+      plausible.trackEvent('404')
+    }
   };
 
   const activeRoute = routes.find(route => route.path === currentPath);
