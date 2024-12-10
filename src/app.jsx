@@ -47,7 +47,7 @@ export function App() {
     if (routes.some(p => p.path === e.url)) {
       plausible.trackPageview()
     } else {
-      plausible.trackEvent('404 Pages', { url: e.url })
+      plausible.trackEvent('not-found-pages', { props: { url: e.url } })
     }
   };
 
