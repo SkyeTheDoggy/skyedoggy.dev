@@ -4,6 +4,13 @@ import { useEffect, useState } from 'preact/hooks';
 import AnimatedBG from './components/animated_bg.jsx';
 import paw from './assets/paw.svg';
 import './app.scss';
+import Plausible from 'plausible-tracker';
+
+const plausible = Plausible({
+  apiHost: 'https://plausible.skyedoggy.dev',
+  domain: 'skyedoggy.dev',
+  hashMode: true
+});
 
 import menuIcon from './assets/icons/menu.svg';
 import menuCloseIcon from './assets/icons/menu_close.svg';
@@ -35,6 +42,7 @@ export function App() {
 
   const handleRoute = (e) => {
     setCurrentPath(e.url);
+    plausible.trackPageview()
   };
 
   const activeRoute = routes.find(route => route.path === currentPath);
