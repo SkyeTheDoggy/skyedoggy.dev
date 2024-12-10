@@ -10,7 +10,9 @@ const plausible = Plausible({
   apiHost: 'https://plausible.skyedoggy.dev',
   domain: 'skyedoggy.dev',
   hashMode: true
-});
+})
+plausible.enableAutoOutboundTracking()
+plausible.enableAutoPageviews()
 
 import menuIcon from './assets/icons/menu.svg';
 import menuCloseIcon from './assets/icons/menu_close.svg';
