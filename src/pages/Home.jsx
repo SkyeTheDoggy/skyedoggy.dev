@@ -5,6 +5,17 @@ import twemoji from '../assets/twemoji';
 import renderToString from 'preact-render-to-string';
 import SkeletonText from "../components/SkeletonText.jsx";
 
+const docsConfigs = {
+    repo: 'SkyeUwU/skyedoggy.dev',
+    branch: 'docs',
+    md_file: 'homeinfo.md'
+}
+
+const docsBase = `https://raw.githubusercontent.com/`
+const docsRepoBase = new URL(`${docsConfigs.repo}/refs/heads`, docsBase).toString()
+const docsBranchBase = `${docsRepoBase}/${docsConfigs.branch}`
+const docsMdFile = `${docsBranchBase}/${docsConfigs.md_file}`
+
 const marked = new Marked({
     gfm: true,
     breaks: true,
@@ -24,6 +35,35 @@ const marked = new Marked({
                     {args.text || args.href}
                 </a>
             );
+        },
+        image(args) {
+            const href = args.href
+                ? new URL(args.href, docsBranchBase).toString()
+                : ''
+            return renderToString(<img
+                src={href}
+                alt={args.text || 'image'}
+                title={args.title || ''}
+            />)
+        },
+        html(args) {
+            const body = document.createElement('body')
+            body.innerHTML = args.raw
+            const childs = body.querySelectorAll('*')
+            
+            childs.forEach(child => {
+                if (child.tagName == 'IMG') {
+                    if (child.src && child.src.trim()) {
+                        const uri = new URL(child.src)
+                        const hostname = uri.host
+                        const base = hostname === window.location.host ? docsBranchBase : hostname
+                        const path = uri.pathname
+                        child.src = `${base}${path}`
+                    }
+                }
+            })
+
+            return body.innerHTML
         }
     }
 })
@@ -41,8 +81,9 @@ export default () => {
 
         const get = async () => {
             try {
-                const response = await fetch('https://cdn.skyedoggy.dev/homeinfo.md')
+                const response = await fetch(docsMdFile)
                 const text = await response.text()
+
                 setInfoMD(text)
             } catch (err) {
                 setError(err.message)
