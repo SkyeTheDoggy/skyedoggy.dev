@@ -1,6 +1,6 @@
 ## Welcome
 
-<img class="avatar" src="avatar.webp" width="200px" draggable="false" title="Skye's Avatar" alt="A digital illustration of a cute dog girl with pastel pink wavy hair, warm brown eyes, and light pink floppy dog ears. She has soft blush on her cheeks, a small smile, and a bone-shaped hair clip on her bangs. She is wearing a light blue hoodie, and the background is a soft pink shade, adding to the overall cozy and adorable vibe." />
+<img class="avatar" src="avatar.webp" width="200px" height="200px" draggable="false" title="Skye's Avatar" alt="A digital illustration of a cute dog girl with pastel pink wavy hair, warm brown eyes, and light pink floppy dog ears. She has soft blush on her cheeks, a small smile, and a bone-shaped hair clip on her bangs. She is wearing a light blue hoodie, and the background is a soft pink shade, adding to the overall cozy and adorable vibe." />
 
 **Hey! ^^**
 
