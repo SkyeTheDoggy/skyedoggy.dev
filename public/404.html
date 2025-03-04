@@ -1,4 +1,18 @@
-<script>
-    sessionStorage.redirect = location.pathname;
-    window.location.replace("/");
-</script>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; URL=index.html" />
+    <script>
+        // Preserve the path on refresh
+        (function () {
+            var path = window.location.pathname;
+            if (path !== "/" && !path.startsWith("/index.html")) {
+                sessionStorage.setItem("redirectPath", path);
+            }
+        })();
+    </script>
+</head>
+
+</html>

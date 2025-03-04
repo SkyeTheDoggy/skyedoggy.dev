@@ -25,6 +25,16 @@
     <meta name="revisit-after" content="7 days">
     <meta name="author" content="SkyeTheDoggy">
     <meta name="theme-color" content="#FCE5E6">
+
+    <script>
+        (function () {
+            var redirectPath = sessionStorage.getItem("redirectPath");
+            if (redirectPath) {
+                sessionStorage.removeItem("redirectPath");
+                history.replaceState(null, null, redirectPath);
+            }
+        })();
+    </script>
     
     <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="skyethedoggy" data-description="Support me on Buy me a coffee!" data-message="" data-color="#A089D2" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 </head>
