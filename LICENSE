@@ -1,21 +1,22 @@
-MIT License
+Anti-Corporate Open License (ACOL)
 
-Copyright (c) 2024 SkyeTheDoggy
+Copyright (c) 2025 SkyeTheDoggy
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person or organization obtaining a copy of this software and associated documentation files (the "Software"), to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. **Corporate Use Restriction**: Any entity classified as a "large corporation" (defined as any for-profit entity with an annual revenue exceeding $100 million USD) is **strictly prohibited** from using, distributing, or modifying this Software unless they comply with section 2.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. **Corporate Transparency Clause**: If a large corporation chooses to use, distribute, or modify this Software, they are required to publicly disclose a comprehensive list of unethical actions they have engaged in, including but not limited to:
+   - Worker exploitation (e.g., underpayment, union busting, unsafe working conditions)
+   - Environmental harm (e.g., pollution, deforestation, irresponsible waste disposal)
+   - Consumer manipulation (e.g., deceptive advertising, price-fixing, data exploitation)
+   - Political interference (e.g., lobbying for anti-worker or anti-consumer policies, funding misinformation)
+   - Any other actions commonly recognized as unethical by reputable labor rights organizations, environmental watchdogs, and public interest groups.
+
+   This disclosure must be prominently displayed on the company's official website and included in all distributions of the Software.
+
+3. **Preservation of Attribution**: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+4. **No Warranty**: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+By using this Software, you agree to abide by these terms. Failure to comply with the Corporate Transparency Clause renders any license granted to a large corporation **null and void**.
