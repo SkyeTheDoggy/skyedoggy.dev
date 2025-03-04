@@ -6,7 +6,7 @@
     <meta http-equiv="refresh" content="0; URL=index.html" />
     <script>
         (function () {
-            var path = window.location.pathname;
+            let path = window.location.pathname;
             if (path !== "/" && !path.startsWith("/index.html")) {
                 sessionStorage.setItem("redirectPath", path);
             }
