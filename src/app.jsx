@@ -11,8 +11,7 @@ const plausible = Plausible({
   domain: 'skyedoggy.dev',
   hashMode: true
 })
-plausible.enableAutoOutboundTracking()
-plausible.enableAutoPageviews()
+const { trackEvent, trackPageview } = plausible
 
 import menuIcon from './assets/icons/menu.svg';
 import menuCloseIcon from './assets/icons/menu_close.svg';
@@ -42,14 +41,24 @@ export function App() {
     return () => window.removeEventListener('resize', updateMobileStatus);
   }, []);
 
-  const handleRoute = (e) => {
+  const handleRouteChange = (e) => {
     setCurrentPath(e.url);
-    if (routes.some(p => p.path === e.url)) {
-      plausible.trackPageview()
+    if (e.current.key === 'notfound') {
+      trackEvent('not-found-pages', {
+        props: {
+          url: e.url,
+          locale: navigator.language || 'en-US'
+        }
+      })
     } else {
-      plausible.trackEvent('not-found-pages', { props: { url: e.url } })
+      if (!routes.some(p => p.path === e.url)) return
+      trackPageview(undefined, {
+        props: {
+          locale: navigator.language || 'en-US'
+        }
+      })
     }
-  };
+  }
 
   const activeRoute = routes.find(route => route.path === currentPath);
   const routeName = activeRoute ? activeRoute.name : 'Not Found';
@@ -108,11 +117,11 @@ export function App() {
             </span>
           </div>
           <div className="mainContent" id="main">
-            <Router history={createHashHistory()} onChange={handleRoute}>
+            <Router history={createHashHistory()} onChange={handleRouteChange}>
               {routes.map(({ path, component }) => (
                 <Route path={path} component={component} />
               ))}
-              <Route default component={NotFound} />
+              <Route default key={'notfound'} component={NotFound} />
             </Router>
           </div>
         </div>
