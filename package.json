@@ -8,6 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "commit_local": "git add . && git commit -a",
     "deploy": "vite build && gh-pages -d dist --cname \"skyedoggy.dev\""
   },
   "dependencies": {

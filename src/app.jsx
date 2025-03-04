@@ -117,7 +117,7 @@ export function App() {
             </span>
           </div>
           <div className="mainContent" id="main">
-            <Router history={createHashHistory()} onChange={handleRouteChange}>
+            <Router onChange={handleRouteChange}>
               {routes.map(({ path, component }) => (
                 <Route path={path} component={component} />
               ))}
