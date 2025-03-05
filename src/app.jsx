@@ -41,6 +41,45 @@ export function App() {
     return () => window.removeEventListener('resize', updateMobileStatus);
   }, []);
 
+  useEffect(() => {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType === 1) {
+            if (node.tagName === 'A') {
+              attachClickListener(node);
+            } else {
+              node.querySelectorAll && node.querySelectorAll('a').forEach(attachClickListener);
+            }
+          }
+        });
+      });
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const isURL = (url) => {
+    try {
+      new URL(url)
+      return true
+    } catch (_) {
+      return false
+    }
+  }
+
+  const attachClickListener = (anchor) => {
+    anchor.addEventListener('click', (event) => {
+      const url = anchor.href
+      if (!isURL(url)) return
+      if (new URL(url, window.location.origin).origin === window.location.origin) return
+
+      trackEvent('Outbound Link: Click', { props: { url } });
+    });
+  };
+
   const handleRouteChange = (e) => {
     setCurrentPath(e.url);
     if (e.current.key === 'notfound') {
