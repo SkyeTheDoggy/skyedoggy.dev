@@ -34,7 +34,7 @@ export function App() {
   const [currentPath, setCurrentPath] = useState(getCurrentUrl());
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
   const [navStatus, setNavStatus] = useState(isMobile ? 'closed' : 'open');
-  const [locale, setLocale] = useState(navigator.language || 'en-US');
+  const [locale, setLocale] = useState(navigator.language);
 
   useEffect(() => {
     const updateLocale = () => setLocale(navigator.language);
