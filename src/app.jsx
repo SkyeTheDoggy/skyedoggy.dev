@@ -34,6 +34,16 @@ export function App() {
   const [currentPath, setCurrentPath] = useState(getCurrentUrl());
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
   const [navStatus, setNavStatus] = useState(isMobile ? 'closed' : 'open');
+  const [locale, setLocale] = useState(navigator.language || 'en-US');
+
+  useEffect(() => {
+    const updateLocale = () => setLocale(navigator.language);
+    window.addEventListener("languagechange", updateLocale);
+
+    return () => {
+      window.removeEventListener("languagechange", updateLocale);
+    };
+  }, []);
 
   useEffect(() => {
     const updateMobileStatus = () => setIsMobile(window.innerWidth <= 800);
@@ -76,25 +86,22 @@ export function App() {
       if (!isURL(url)) return
       if (new URL(url, window.location.origin).origin === window.location.origin) return
 
-      trackEvent('Outbound Link: Click', { props: { url } });
+      trackEvent('Outbound Link: Click', { props: { url, locale } });
     });
   };
 
   const handleRouteChange = (e) => {
     setCurrentPath(e.url);
     if (e.current.key === 'notfound') {
-      trackEvent('not-found-pages', {
+      trackEvent('404', {
         props: {
-          url: e.url,
-          locale: navigator.language || 'en-US'
+          url: e.url, locale
         }
       })
     } else {
       if (!routes.some(p => p.path === e.url)) return
       trackPageview(undefined, {
-        props: {
-          locale: navigator.language || 'en-US'
-        }
+        props: { locale }
       })
     }
   }
