@@ -1,7 +1,7 @@
 import { Marked } from "marked";
 import { useEffect, useState } from "preact/hooks";
 import '../styles/markdown.scss';
-import twemoji from '../assets/twemoji/index.js';
+import twemoji from '../assets/twemoji/';
 import renderToString from 'preact-render-to-string';
 import SkeletonText from "../components/SkeletonText.jsx";
 
