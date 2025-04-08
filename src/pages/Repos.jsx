@@ -10,7 +10,7 @@ export default () => {
     const [isLoading, setLoading] = useState(null);
     const [animate, setAnimate] = useState(false);
 
-    const user = `SkyeUwU`
+    const user = `SkyeTheDoggy`
     const userURL = `https://api.github.com/users/${user}`
     const url = `${userURL}/repos?sort=pushed`;
 
