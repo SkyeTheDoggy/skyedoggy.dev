@@ -6,7 +6,7 @@ import renderToString from 'preact-render-to-string';
 import SkeletonText from "../components/SkeletonText.jsx";
 
 const docsConfigs = {
-    repo: 'SkyeUwU/skyedoggy.dev',
+    repo: 'SkyeTheDoggy/skyedoggy.dev',
     branch: 'docs',
     md_file: 'homeinfo.md'
 }
