@@ -15,7 +15,7 @@ dist
 dist-ssr
 *.local
 !.nojekyll
-!src/assets/twemoji/*
+!src/assets/twemoji/**
 
 # Editor directories and files
 .vscode/*
