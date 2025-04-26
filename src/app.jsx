@@ -7,7 +7,7 @@ import './app.scss';
 import Plausible from 'plausible-tracker';
 
 const plausible = Plausible({
-  apiHost: 'https://plausible.skyedoggy.dev',
+  apiHost: 'https://implausible.skyedoggy.dev',
   domain: 'skyedoggy.dev',
   hashMode: true
 })
