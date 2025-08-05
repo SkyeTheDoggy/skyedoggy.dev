@@ -11,6 +11,7 @@ Right now, I'm putting my time into a Discord Bot named **[SkyeTheBot](https://s
 Don't forget to check my work and socials below and in the navigation menu. (｡・//ε//・｡)
 
 > If you really like what I do, you can also support me by **[buying me a pizza 🍕](https://buymeacoffee.com/skyethedoggy)**
+> **Note:** This website is getting a fresh new makeover! Check back in a few days (or maybe a few months if my motivation takes a nap) for a shiny new design!
 
 ## Socials
 
