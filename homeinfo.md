@@ -16,8 +16,6 @@ Don't forget to check my work and socials below and in the navigation menu. (｡
 
 A list with my socials.
 
-- <img class="icon small" src="icons/revoltdotchat.svg"></img> [Revolt Server](https://rvlt.gg/j4b6N4kk)
-- <img class="icon small" src="icons/discord.svg"></img> [Discord Server](https://discord.skyedoggy.dev)
 - <img class="icon small" src="icons/bluesky.svg"></img> [BlueSky](https://bsky.skyedoggy.dev)
 - <img class="icon small" src="icons/github.svg"></img> [GitHub](https://github.com/SkyeTheDoggy)
 - <img class="icon small" src="icons/youtube.svg"></img> [YouTube](https://www.youtube.com/@SkyeTheDoggy)
