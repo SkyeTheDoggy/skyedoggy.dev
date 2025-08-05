@@ -1,5 +1,7 @@
 ## Welcome
 
+> **Note:** This website is getting a fresh new makeover! Check back in a few days (or maybe a few months if my motivation takes a nap) for a shiny new design!
+
 <img class="avatar" src="avatar.webp" width="200px" height="200px" draggable="false" title="Skye's Avatar" alt="A digital illustration of a cute dog girl with pastel pink wavy hair, warm brown eyes, and light pink floppy dog ears. She has soft blush on her cheeks, a small smile, and a bone-shaped hair clip on her bangs. She is wearing a light blue hoodie, and the background is a soft pink shade, adding to the overall cozy and adorable vibe." />
 
 **Hey! ^^**
@@ -11,7 +13,6 @@ Right now, I'm putting my time into a Discord Bot named **[SkyeTheBot](https://s
 Don't forget to check my work and socials below and in the navigation menu. (｡・//ε//・｡)
 
 > If you really like what I do, you can also support me by **[buying me a pizza 🍕](https://buymeacoffee.com/skyethedoggy)**
-> **Note:** This website is getting a fresh new makeover! Check back in a few days (or maybe a few months if my motivation takes a nap) for a shiny new design!
 
 ## Socials
 
