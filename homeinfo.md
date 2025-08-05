@@ -19,7 +19,6 @@ A list with my socials.
 - <img class="icon small" src="icons/bluesky.svg"></img> [BlueSky](https://bsky.skyedoggy.dev)
 - <img class="icon small" src="icons/github.svg"></img> [GitHub](https://github.com/SkyeTheDoggy)
 - <img class="icon small" src="icons/youtube.svg"></img> [YouTube](https://www.youtube.com/@SkyeTheDoggy)
-- <img class="icon small" src="icons/pronounsdotpage.svg"></img> [Pronouns.page](https://en.pronouns.page/@skyethedoggy)
 
 ## Tools and Languages
 
