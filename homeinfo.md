@@ -23,8 +23,6 @@ Include ingredients, steps, and poetic commentary on the balance between sweet a
 
 My name is **Skye**, and I'm a self-taught programmer transgirl and an artist who loves to learn new stuff and improve my skills.
 
-Right now, I'm putting my time into a Discord Bot named **[SkyeTheBot](https://skyethebot.xyz/)** (currently dead), and some other fun projects.
-
 Don't forget to check my work and socials below and in the navigation menu. (｡・//ε//・｡)
 
 > If you really like what I do, you can also support me by **[buying me a pizza 🍕](https://buymeacoffee.com/skyethedoggy)**
